@@ -11,6 +11,18 @@ body {
 }
 
 /* Header */
+header {
+    background-image: url('anhnen1.png'); /* Đặt ảnh nền là anhnen1.png */
+    background-size: cover; /* Đảm bảo ảnh phủ đầy toàn bộ header */
+    background-position: center; /* Căn giữa ảnh để ảnh không bị lệch */
+    background-attachment: fixed; /* Ảnh nền cố định khi cuộn trang */
+    height: 80px; /* Đặt chiều cao của header là 80px */
+    text-align: center;
+    border-bottom: 6px solid #2980b9; /* Đường viền dưới header */
+    display: flex;
+    justify-content: center; /* Căn giữa nội dung trong header */
+    align-items: center; /* Căn giữa nội dung theo chiều dọc */
+}
 
 
 
