@@ -20,6 +20,7 @@ header {
     text-align: center;
     color: white;
     padding: 20px;
+    box-sizing: border-box; /* Đảm bảo padding không làm ảnh hưởng đến tổng chiều cao */
 }
 
 header::before {
@@ -34,8 +35,12 @@ header::before {
 }
 
 header .header-content {
-    position: relative; /* Đảm bảo nội dung trong header xuất hiện trên lớp phủ mờ */
-    z-index: 2; /* Đảm bảo nội dung (logo và tiêu đề) nằm trên lớp phủ */
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column; /* Đảm bảo logo và tiêu đề nằm theo chiều dọc */
+    justify-content: center;
+    align-items: center;
 }
 
 header .logo {
@@ -54,10 +59,11 @@ nav ul {
     list-style-type: none;
     padding: 0;
     margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Canh giữa menu */
 }
 
 nav ul li {
-    display: inline-block;
     margin: 0 20px;
 }
 
@@ -190,47 +196,43 @@ footer {
     width: 100%;
 }
 
-/* Responsive design for small screens (e.g. mobile) */
+/* Media queries for responsiveness (small devices) */
 @media (max-width: 768px) {
-    /* Chỉ thay đổi giao diện trên thiết bị di động */
     .body-content {
-        flex-direction: column; /* Chuyển các cột thành dọc */
-        margin-top: 20px;
+        flex-direction: column; /* Chuyển cột thành hàng cho thiết bị nhỏ */
     }
 
-    /* Điều chỉnh cho cột trái và phải */
-    .left-column, .right-column {
-        width: 100%;
+    .left-column,
+    .right-column {
+        width: 100%; /* Mỗi cột chiếm toàn bộ chiều rộng */
         padding-left: 0;
         padding-right: 0;
     }
 
     .image-slider {
-        height: 250px; /* Giảm chiều cao ảnh cho phù hợp với di động */
+        height: 300px; /* Điều chỉnh chiều cao ảnh cho phù hợp với điện thoại */
     }
 
     .right-column iframe {
-        height: 200px; /* Giảm chiều cao iframe cho phù hợp */
+        height: 250px; /* Giảm chiều cao iframe khi trên điện thoại */
     }
 
-    /* Điều chỉnh font cho header và menu trên di động */
     header h1 {
-        font-size: 24px;
+        font-size: 24px; /* Giảm font cho tiêu đề */
     }
 
     nav ul li a {
-        font-size: 18px;
-        padding: 12px 25px; /* Cải thiện khoảng cách trên thiết bị di động */
+        font-size: 18px; /* Giảm font cho các liên kết */
+        padding: 12px 25px; /* Giảm padding cho các liên kết */
     }
 
-    /* Nút điều khiển slider */
     .slider-controls button {
         font-size: 24px;
-        padding: 12px;
+        padding: 10px;
     }
 }
 
-/* Responsive design for very small screens */
+/* Further responsiveness for very small devices (phones) */
 @media (max-width: 480px) {
     header h1 {
         font-size: 20px;
@@ -238,9 +240,10 @@ footer {
 
     .slider-controls button {
         font-size: 20px;
-        padding: 10px;
+        padding: 8px;
     }
 }
+
 
 
 
