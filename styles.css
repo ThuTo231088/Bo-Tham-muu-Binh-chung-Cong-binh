@@ -80,7 +80,7 @@ body {
     
     /* Font chữ theo ảnh */
     font-family: "Times New Roman", "Times", serif;
-    font-size: 32px;
+    font-size: 29px;
     font-weight: 700; /* Độ đậm vừa phải như ảnh */
     letter-spacing: 2.5px; /* Khoảng cách chữ rộng hơn */
     margin-bottom: 5px;
@@ -97,7 +97,7 @@ body {
     
     /* Font chữ theo ảnh */
     font-family: "Times New Roman", "Times", serif;
-    font-size: 36px; /* Nhỏ hơn dòng trên một chút */
+    font-size: 33px; /* Nhỏ hơn dòng trên một chút */
     font-weight: 700; /* Độ đậm vừa phải */
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -225,7 +225,6 @@ body {
     transition: all 0.3s ease; /* Hiệu ứng chuyển động */
     width: 100%; /* Nút chiếm toàn bộ chiều rộng của container */
     max-width: 1200px;  /* Giới hạn chiều rộng tối đa của nút */
-    white-space: nowrap;  /* Đảm bảo chữ trong nút luôn nằm trên một dòng */
     overflow: hidden;  /* Ẩn phần chữ nếu quá dài */
     text-overflow: ellipsis; /* Thêm dấu ba chấm nếu chữ vượt quá chiều rộng nút */
     box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước */
