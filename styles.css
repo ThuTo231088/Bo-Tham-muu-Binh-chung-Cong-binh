@@ -11,14 +11,15 @@ body {
 }
 
 /* Header */
+/* Header */
 header {
-    background-image: url('anhnen1.png'); /* Thêm ảnh nền */
-     background-size: cover; /* Đảm bảo ảnh phủ đầy toàn bộ header */
-    background-position: center; /* Căn giữa ảnh */
-    background-attachment: fixed; /* Ảnh nền cố định khi cuộn */
-    height: 500px; /* Điều chỉnh chiều cao header */
+    background-image: url('anhnen1.png'); /* Đặt ảnh nền là anhnen1.png */
+    background-size: cover; /* Đảm bảo ảnh phủ đầy toàn bộ header */
+    background-position: center; /* Căn giữa ảnh để ảnh không bị lệch */
+    background-attachment: fixed; /* Ảnh nền cố định khi cuộn trang */
+    height: 500px; /* Điều chỉnh chiều cao của header */
     text-align: center;
-    border-bottom: 6px solid #2980b9;
+    border-bottom: 6px solid #2980b9; /* Nếu bạn muốn có đường viền dưới header */
 }
 
 header .header-content {
