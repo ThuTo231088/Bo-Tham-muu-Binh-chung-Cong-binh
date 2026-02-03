@@ -1,50 +1,41 @@
-/* --- 1. CẤU HÌNH CHUNG & RESET --- */
+/* --- 1. CẤU HÌNH CHUNG --- */
 :root {
-    --primary-red: #DA251D;
-    --primary-gold: #D4AF37;
-    --primary-navy: #003366;
-    --bg-light: #f4f7f6;
+    --primary-red: #DA251D;  /* Đỏ cờ */
+    --primary-gold: #D4AF37; /* Vàng */
+    --primary-navy: #003366; /* Xanh quân đội */
     --text-dark: #333;
+    /* Màu nền hài hòa, dịu mắt (Xám xanh nhẹ) */
+    --bg-harmonious: #f0f2f5; 
 }
 
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-harmonious);
+    margin: 0;
+    padding: 0;
     color: var(--text-dark);
     line-height: 1.6;
-    margin: 0; 
-    padding: 0;
-    
-    /* --- CẤU HÌNH NỀN TRỐNG ĐỒNG --- */
-    background-color: #fdfbf7; /* Màu nền vàng kem nhẹ dự phòng */
-    /* CHÚ Ý: Bạn nhớ đổi tên file ảnh bên dưới cho đúng file bạn tải về */
-    background-image: url('background-trongdong.jpg'); 
-    background-repeat: repeat;
-    background-size: 500px; /* Kích thước hoa văn */
-    background-attachment: fixed; /* Cố định nền khi cuộn */
-    background-blend-mode: multiply; /* Hòa trộn để nền không bị quá chói */
 }
 
-/* --- 2. HEADER (PHẦN ĐẦU TRANG) --- */
+/* --- 2. HEADER (QUAY VỀ GIAO DIỆN GỐC) --- */
 .header {
     position: relative;
     background-image: url('nen 2.jpg');
     background-size: cover;
-    background-position: center bottom;
-    height: 320px; /* Chiều cao chuẩn để hiển thị đẹp */
+    background-position: center;
+    /* Chiều cao vừa phải như ban đầu */
+    height: 280px; 
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    /* Viền vàng sang trọng ngăn cách header và thân trang */
-    border-bottom: 5px solid #D4AF37; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .header-overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    /* Gradient xanh làm nổi bật logo ở giữa */
-    background: radial-gradient(circle, rgba(0,51,102,0.4) 0%, rgba(0,51,102,0.9) 100%);
+    /* Lớp phủ tối màu đơn giản để chữ dễ đọc */
+    background: linear-gradient(to bottom, rgba(0,51,102,0.8), rgba(0,51,102,0.5));
     z-index: 1;
 }
 
@@ -57,47 +48,34 @@ body {
     text-align: center;
 }
 
-/* Hiệu ứng Logo phát sáng */
 .header-logo {
     height: 110px;
-    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));
-    animation: glow 3s infinite alternate;
-}
-
-@keyframes glow {
-    from { filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5)); }
-    to { filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.9)); }
+    /* Giữ lại hiệu ứng bóng nhẹ cho logo nổi hơn chút */
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
 }
 
 .header-text {
     display: flex;
     flex-direction: column;
     font-family: 'Merriweather', serif;
+    text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .text-upper {
-    font-size: 34px; /* Chữ to, rõ ràng */
+    font-size: 28px;
     font-weight: 900;
     color: #FFD700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 3px 3px 0px #DA251D, 4px 4px 10px black; /* Hiệu ứng chữ 3D */
-    margin-bottom: 5px;
+    letter-spacing: 1px;
 }
 
 .text-lower {
     font-size: 24px;
     font-weight: 700;
     color: white;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    border-top: 2px solid rgba(255,255,255,0.5);
-    padding-top: 5px;
-    display: inline-block;
 }
 
-/* --- 3. THẺ NỔI (CTA CARDS) --- */
+/* --- 3. CTA CARDS (GIỮ NGUYÊN VÌ ĐÃ ĐẸP) --- */
 .cta-container {
     display: flex;
     justify-content: center;
@@ -114,7 +92,7 @@ body {
     padding: 20px;
     border-radius: 12px;
     text-decoration: none;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     display: flex;
     align-items: center;
     gap: 15px;
@@ -124,11 +102,7 @@ body {
 
 .cta-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-}
-
-.cta-card:hover .cta-icon {
-    transform: rotateY(360deg); /* Xoay icon khi di chuột */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
 .card-red { border-left-color: var(--primary-red); }
@@ -148,88 +122,72 @@ body {
     justify-content: center;
     border-radius: 50%;
     flex-shrink: 0;
-    transition: transform 0.6s ease;
 }
 
 .cta-text h3 { margin: 0; font-size: 18px; font-weight: bold; }
 .cta-text p { margin: 5px 0 0; font-size: 13px; color: #666; }
 
-/* --- 4. PHẦN THÂN (MAIN BODY) & SLOGAN --- */
+/* --- 4. BODY & TIÊU ĐỀ (ĐÃ SỬA LỖI XUỐNG DÒNG) --- */
 .container {
     max-width: 1200px;
-    margin: 70px auto 40px;
+    margin: 60px auto 40px;
     padding: 0 20px;
 }
 
 .intro-section {
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .main-title {
     font-family: 'Merriweather', serif;
     color: var(--primary-navy);
-    font-size: 30px;
+    /* Giảm size chữ xuống một chút để không bị rớt dòng xấu */
+    font-size: 26px; 
     font-weight: 900;
-    margin-bottom: 25px;
-    text-shadow: 2px 2px 0px white; /* Viền trắng để tách khỏi nền trống đồng */
+    margin-bottom: 15px;
+    line-height: 1.4;
 }
 
-/* === SLOGAN NỔI BẬT === */
+/* Slogan: Giữ đậm và đỏ cho nổi, nhưng bỏ khung viền rườm rà */
 .sub-title {
     color: #DA251D; /* Đỏ cờ */
-    font-size: 19px;
-    font-weight: 800;
-    text-transform: uppercase;
-    background: #ffffff;
-    display: inline-block;
-    padding: 15px 40px;
-    border-radius: 50px;
-    box-shadow: 0 5px 15px rgba(218, 37, 29, 0.15);
-    border: 2px solid #D4AF37;
-    position: relative;
-    letter-spacing: 1px;
+    font-size: 18px; /* Kích thước vừa phải */
+    font-weight: 700; /* In đậm */
+    text-transform: uppercase; /* Viết hoa toàn bộ */
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+    display: inline-block; /* Để căn giữa chuẩn hơn */
 }
 
-.sub-title::before, .sub-title::after {
-    content: "★";
-    color: #D4AF37;
-    margin: 0 10px;
-    font-size: 1.2em;
-    vertical-align: middle;
-}
-
-/* --- 5. GRID & CONTENT --- */
+/* --- 5. GRID CONTENT --- */
 .content-grid {
     display: grid;
-    grid-template-columns: 1.3fr 0.7fr; /* Cột trái to hơn */
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 30px;
 }
 
 .card-box {
     background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    padding: 25px; /* Tăng khoảng cách trong box cho thoáng */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Bóng mờ nhẹ nhàng */
     margin-bottom: 30px;
-    border-top: 4px solid var(--primary-navy); /* Điểm nhấn màu xanh trên đầu mỗi box */
 }
 
 .section-heading {
     margin-top: 0;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
     color: var(--primary-navy);
     font-size: 20px;
-    text-transform: uppercase;
-    font-weight: 700;
 }
 
 /* Slider */
 .image-slider {
     position: relative;
     width: 100%;
-    height: 400px; /* Tăng chiều cao ảnh */
+    height: 350px;
     overflow: hidden;
     border-radius: 8px;
 }
@@ -245,7 +203,7 @@ body {
 .slide-img.active { display: block; }
 
 @keyframes fadeEffect {
-    from {opacity: .6} to {opacity: 1}
+    from {opacity: .4} to {opacity: 1}
 }
 
 .prev, .next {
@@ -255,15 +213,14 @@ body {
     background: rgba(0,0,0,0.4);
     color: white;
     border: none;
-    padding: 15px;
+    padding: 10px 15px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 18px;
     border-radius: 50%;
-    margin: 0 15px;
-    transition: 0.3s;
+    margin: 0 10px;
 }
 .next { right: 0; }
-.prev:hover, .next:hover { background: var(--primary-red); }
+.prev:hover, .next:hover { background: rgba(0,0,0,0.8); }
 
 /* Video & News */
 .video-wrapper iframe {
@@ -272,37 +229,34 @@ body {
     border-radius: 8px;
 }
 
-.news-box p { font-size: 14px; color: #555; }
-
 .btn-read-more {
     display: inline-block;
     background-color: var(--primary-navy);
     color: white;
     padding: 10px 20px;
-    border-radius: 4px;
+    border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 14px;
     margin-top: 10px;
     transition: background 0.3s;
 }
-.btn-read-more:hover { background-color: var(--primary-red); }
+.btn-read-more:hover { background-color: #002244; }
 
 /* --- 6. FOOTER --- */
 footer {
     background-color: var(--primary-navy);
     color: white;
     text-align: center;
-    padding: 30px 20px;
+    padding: 20px;
     margin-top: 50px;
-    border-top: 5px solid #D4AF37;
 }
 
-/* --- 7. RESPONSIVE (MOBILE) --- */
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-    .header { height: 260px; }
-    .header-text .text-upper { font-size: 22px; }
+    .header-text .text-upper { font-size: 20px; }
     .header-text .text-lower { font-size: 16px; }
+    .header { height: 220px; }
     
     .cta-container {
         flex-direction: column;
@@ -310,11 +264,13 @@ footer {
     }
     .cta-card { width: 100%; box-sizing: border-box; }
     
-    .content-grid { grid-template-columns: 1fr; }
-    .image-slider { height: 250px; }
-    
-    .sub-title {
-        font-size: 14px;
-        padding: 10px 15px;
+    .content-grid {
+        grid-template-columns: 1fr;
     }
+    
+    /* Trên điện thoại thì chữ tiêu đề phải nhỏ nữa mới không bị vỡ */
+    .main-title { font-size: 20px; }
+    .sub-title { font-size: 14px; }
+    
+    .image-slider { height: 250px; }
 }
