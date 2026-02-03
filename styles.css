@@ -9,11 +9,18 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: var(--bg-light);
-    margin: 0;
-    padding: 0;
     color: var(--text-dark);
     line-height: 1.6;
+    margin: 0; padding: 0;
+    
+    /* THIẾT LẬP NỀN TRỐNG ĐỒNG */
+    background-color: #fdfbf7; /* Màu nền dự phòng (vàng kem nhẹ) */
+    background-image: url('background-trongdong.jpg'); /* Thay tên file ảnh bạn chọn vào đây */
+    background-repeat: repeat; /* Lặp lại hoa văn */
+    background-size: 500px; /* Chỉnh kích thước hoa văn vừa phải */
+    background-attachment: fixed; /* Giữ nguyên nền khi cuộn chuột */
+    /* Làm mờ hình nền đi để chữ nổi bật hơn (nếu ảnh quá đậm) */
+    background-blend-mode: soft-light; 
 }
 
 /* --- HEADER --- */
