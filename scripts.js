@@ -1,5 +1,5 @@
 let currentIndex = 0;
-const images = document.querySelectorAll('.slide-img');
+const images = document.querySelectorAll('.image-slider img');
 
 function showSlide(index) {
     images.forEach((img, i) => {
@@ -22,5 +22,6 @@ function prevSlide() {
 
 // Initialize the slider
 showSlide(currentIndex);
+
 
 
