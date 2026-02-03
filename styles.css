@@ -194,44 +194,57 @@ body {
     text-decoration: underline;
 }
 
-/* Buttons Container - Phiên bản đơn giản */
+/* Container chứa nút */
 .buttons-container {
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 30px;
+    display: flex;
+    justify-content: center; /* Căn giữa các nút */
+    gap: 30px; /* Khoảng cách giữa các nút */
+    margin-top: 30px; /* Khoảng cách từ văn bản lên đến nút */
 }
 
-/* Buttons Container */
-.buttons-container {
-    text-align: center;
-    margin-top: 50px;
-}
-
+/* Nút bấm */
 .buttons-container .button {
-    background-color: #3498db;
+    background-color: #f39c12;  /* Màu vàng sáng cho nút */
     color: white;
-    padding: 15px 30px;
+    padding: 20px 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 12px; /* Bo tròn các góc */
     border: none;
-    border-radius: 10px;
-    font-size: 20px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    margin: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng nhẹ */
+    transition: all 0.3s ease; /* Hiệu ứng chuyển động */
+    max-width: 350px;  /* Giới hạn chiều rộng để nút không bị quá dài */
+    width: 100%;
 }
 
+/* Hiệu ứng khi hover vào nút */
 .buttons-container .button:hover {
-    background-color: #2980b9;
+    background-color: #e67e22; /* Màu cam đậm khi hover */
+    transform: scale(1.05); /* Tăng kích thước nút khi hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Tăng bóng khi hover */
 }
 
-/* Điều chỉnh trên mobile */
+/* Hiệu ứng khi click vào nút */
+.buttons-container .button:active {
+    transform: scale(0.98); /* Giảm kích thước nút khi click */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Giảm bóng khi click */
+}
+
+/* Responsive: Đảm bảo nút đẹp trên thiết bị di động */
 @media (max-width: 768px) {
+    .buttons-container {
+        flex-direction: column; /* Chuyển các nút thành cột trên màn hình nhỏ */
+        gap: 20px; /* Giảm khoảng cách giữa các nút */
+    }
+
     .buttons-container .button {
-        display: block;
-        width: 90%;
-        max-width: 350px;
-        margin: 10px auto;
+        max-width: 300px; /* Giảm chiều rộng tối đa cho nút trên di động */
     }
 }
+
 /* Footer style */
 footer {
     text-align: center;
