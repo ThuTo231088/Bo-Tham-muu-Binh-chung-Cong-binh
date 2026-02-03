@@ -1,178 +1,28 @@
-/* General body style */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    color: #333;
+let currentIndex = 0;
+const images = document.querySelectorAll('.image-slider img');
+
+function showSlide(index) {
+    images.forEach((img, i) => {
+        img.classList.remove('active');
+        if (i === index) {
+            img.classList.add('active');
+        }
+    });
 }
 
-/* Header */
-header {
-    background-color: rgba(255, 255, 255, 0.9); /* Màu nền nhẹ, bán trong suốt */
-    padding: 40px 0;
-    text-align: center;
-    border-bottom: 6px solid #2980b9;
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showSlide(currentIndex);
 }
 
-header .header-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+function prevSlide() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showSlide(currentIndex);
 }
 
-header .logo {
-    width: 100px; /* Độ rộng logo */
-    height: auto;
-}
+// Initialize the slider
+showSlide(currentIndex);
 
-header h1 {
-    font-size: 32px;
-    color: #B91B1B;
-    font-weight: bold;
-}
-
-/* Navigation Menu */
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 20px;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 0 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 22px;
-    padding: 15px 30px;
-    background-color: #2980b9;
-    border-radius: 10px;
-    transition: background-color 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: #3498db;
-}
-
-/* Body content: 2 columns (left for images, right for video and article) */
-.body-content {
-    display: flex;
-    margin-top: 30px;
-    gap: 20px; /* Khoảng cách giữa 2 cột */
-}
-
-/* Left column (image slider) */
-.left-column {
-    width: 50%;
-    position: relative;
-    overflow: hidden;
-}
-
-.image-slider {
-    position: relative;
-    width: 100%;
-    height: 400px; /* Cố định chiều cao */
-}
-
-.image-slider img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Cắt ảnh sao cho không bị giãn */
-    display: none;
-}
-
-.image-slider img.active {
-    display: block;
-}
-
-/* Slider controls (prev/next buttons) */
-.slider-controls {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-    opacity: 0.5;
-    transition: opacity 0.3s;
-}
-
-.slider-controls button {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    font-size: 30px;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: background-color 0.3s ease, opacity 0.3s ease;
-}
-
-.slider-controls button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-    opacity: 1; /* Nút trở nên rõ ràng khi hover */
-}
-
-/* Right column (video and article) */
-.right-column {
-    width: 50%;
-    padding-left: 20px;
-}
-
-.right-column iframe {
-    width: 100%;
-    height: 315px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
-
-.right-column h3 {
-    font-size: 24px;
-    color: #2980b9;
-    margin-bottom: 10px;
-}
-
-.right-column a {
-    color: #2980b9;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.right-column a:hover {
-    text-decoration: underline;
-}
-
-/* Content section styles */
-section {
-    padding: 30px;
-    margin: 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* Nền bán trong suốt */
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Title styles */
-h2 {
-    font-size: 28px;
-    color: #e74c3c;
-    margin-bottom: 20px;
-}
-
-/* Footer style */
-footer {
-    text-align: center;
-    padding: 15px;
-    background-color: #34495e;
-    color: white;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
 
 
 
