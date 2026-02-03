@@ -12,28 +12,29 @@ body {
 
 /* Header */
 /* Header */
+/* Header */
 header {
     background-image: url('anhnen1.png'); /* Đặt ảnh nền là anhnen1.png */
     background-size: cover; /* Đảm bảo ảnh phủ đầy toàn bộ header */
     background-position: center; /* Căn giữa ảnh để ảnh không bị lệch */
     background-attachment: fixed; /* Ảnh nền cố định khi cuộn trang */
-    height: 500px; /* Điều chỉnh chiều cao của header */
+    height: 80px; /* Đặt chiều cao header bằng chiều cao ảnh */
     text-align: center;
-    border-bottom: 6px solid #2980b9; /* Nếu bạn muốn có đường viền dưới header */
-}
-
-header .header-content {
+    border-bottom: 6px solid #2980b9; /* Đường viền dưới header */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    flex-direction: column;
-    color: white; /* Đổi màu chữ để dễ đọc trên nền ảnh */
+    justify-content: center; /* Căn giữa nội dung trong header */
+    align-items: center; /* Căn giữa nội dung theo chiều dọc */
 }
 
-header .logo {
-    width: 100px; /* Độ rộng logo */
-    height: auto;
+header .navbar-header {
+    display: flex;
+    justify-content: center; /* Căn giữa nội dung trong navbar */
+    align-items: center; /* Căn giữa nội dung theo chiều dọc */
+}
+
+header .navbar-brand {
+    max-height: 100%; /* Đảm bảo ảnh không vượt quá chiều cao của header */
+    object-fit: contain; /* Đảm bảo ảnh không bị giãn */
 }
 
 header h1 {
@@ -41,6 +42,7 @@ header h1 {
     font-weight: bold;
     color: #fff;
 }
+
 
 /* Body content: 2 columns (left for images, right for video and article) */
 .body-content {
