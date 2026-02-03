@@ -1,70 +1,74 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bộ Tham mưu Binh chủng Công binh</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="header-content">
-            <img src="logo.jpg" alt="Logo" class="logo">
+            <img src="logo.jpg" alt="Logo" class="logo" />
             <h1>Bộ Tham mưu Binh chủng Công binh</h1>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#section1">Bài dự thi tìm hiểu</a></li>
-                <li><a href="#section2">Mini Game</a></li>
-            </ul>
-        </nav>
     </header>
-   <div class="container">
-    <!-- Body Part 1 -->
-    <section id="section1">
-        <h2>Kỷ niệm 80 năm ngày truyền thống Binh chủng Công binh</h2>
-        <p>Đây là dịp để chúng ta ôn lại và tôn vinh những thành tựu đã đạt được trong suốt 80 năm qua của Binh chủng Công binh.</p>
 
-        <!-- Chia phần theo chiều ngang (slide ảnh bên trái, video và bài báo bên phải) -->
-        <div class="body-content">
-            <!-- Slide ảnh - Cột trái -->
-            <div class="left-column">
-                <h3>Ảnh truyền thống Binh chủng Công binh</h3>
-                <div class="image-slider">
-                    <img src="image1.jpg" alt="Image 1" class="slide-img">
-                    <img src="image2.jpg" alt="Image 2" class="slide-img">
-                    <img src="image3.png" alt="Image 3" class="slide-img">
-                </div>
-                 <!-- Thêm các nút điều khiển -->
-            <div class="slider-controls">
-                <button class="prev" onclick="prevSlide()">&#10094;</button>
-                <button class="next" onclick="nextSlide()">&#10095;</button>
-            </div>
-            </div>
+    <div class="container">
+        <!-- Body Part 1 -->
+        <section id="section1">
+            <h2>Kỷ niệm 80 năm ngày truyền thống Binh chủng Công binh</h2>
+            <p>Đây là dịp để chúng ta ôn lại và tôn vinh những thành tựu đã đạt được trong suốt 80 năm qua của Binh chủng Công binh.</p>
 
-            <!-- Video và Bài báo - Cột phải -->
-            <div class="right-column">
-                <div class="media">
-                    <h3>Video truyền thống Binh chủng Công binh</h3>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/d5GKohspaok" frameborder="0" allowfullscreen></iframe>
+            <!-- Chia phần theo chiều ngang (slide ảnh bên trái, video và bài báo bên phải) -->
+            <div class="body-content">
+                <!-- Slide ảnh - Cột trái -->
+                <div class="left-column">
+                    <h3>Ảnh truyền thống Binh chủng Công binh</h3>
+                    <div class="image-slider">
+                        <img src="image1.jpg" alt="Image 1" class="slide-img" />
+                        <img src="image2.jpg" alt="Image 2" class="slide-img" />
+                        <img src="image3.png" alt="Image 3" class="slide-img" />
+                    </div>
+                    <!-- Thêm các nút điều khiển -->
+                    <div class="slider-controls">
+                        <button class="prev" onclick="prevSlide()">&#10094;</button>
+                        <button class="next" onclick="nextSlide()">&#10095;</button>
+                    </div>
                 </div>
-                <div class="media">
-                    <h3>Bài báo về Binh chủng Công binh</h3>
-                    <p><a href="https://mod.gov.vn/home/intro?1dmy&current=true&urile=wcm%3Apath%3AMod/sa-mod-site/sa-qpvn/sa-qpvn-bqp-root/sa-qpvn-bqp-child-bc/sa-qpvn-bqp-child-bc-bccb/eb3e1bf0-a9c4-43ca-a3d3-a138dc0c457f" target="_blank">Đọc bài báo tại đây</a></p>
+
+                <!-- Video và Bài báo - Cột phải -->
+                <div class="right-column">
+                    <div class="media">
+                        <h3>Video truyền thống Binh chủng Công binh</h3>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/d5GKohspaok" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="media">
+                        <h3>Bài báo về Binh chủng Công binh</h3>
+                        <p><a href="https://mod.gov.vn/home/intro?1dmy&current=true&urile=wcm%3Apath%3AMod/sa-mod-site/sa-qpvn/sa-qpvn-bqp-root/sa-qpvn-bqp-child-bc/sa-qpvn-bqp-child-bc-bccb/eb3e1bf0-a9c4-43ca-a3d3-a138dc0c457f" target="_blank">Đọc bài báo tại đây</a></p>
+                    </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Section 2: Di chuyển nút xuống body -->
+        <div class="buttons-container">
+            <a href="#section1"><button class="button">Bài dự thi</button></a>
+            <a href="#section2"><button class="button">Mini Game</button></a>
         </div>
-    </section>
-        </div>
+    </div>
 
-  <footer>
+    <!-- Footer -->
+    <footer>
         <div class="container">
             <p>&copy; 2026 Bộ Tham mưu Binh chủng Công binh. Tất cả các quyền được bảo lưu.</p>
         </div>
     </footer>
+
     <script src="scripts.js"></script>
 </body>
 </html>
+
 
 
