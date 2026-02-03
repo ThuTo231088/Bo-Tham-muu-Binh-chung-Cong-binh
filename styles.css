@@ -201,35 +201,26 @@ body {
     margin-bottom: 30px;
 }
 
+/* Buttons Container */
+.buttons-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
 .buttons-container .button {
     background-color: #3498db;
     color: white;
-    padding: 15px 40px; /* Tăng padding ngang */
+    padding: 15px 30px;
     border: none;
     border-radius: 10px;
     font-size: 20px;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: background-color 0.3s;
     margin: 10px;
-    
-    /* QUAN TRỌNG: Text chỉ 1 dòng */
-    white-space: nowrap;
-    
-    /* QUAN TRỌNG: Độ rộng tối thiểu để các nút bằng nhau */
-    min-width: 200px;
-    
-    /* Đảm bảo chiều cao cố định */
-    height: 60px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
 }
 
 .buttons-container .button:hover {
     background-color: #2980b9;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Điều chỉnh trên mobile */
