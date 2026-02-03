@@ -10,6 +10,35 @@ body {
     min-height: 100vh;
 }
 
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004d00; /* Màu xanh lá đậm phù hợp với quân đội */
+    color: white;
+    padding: 15px 30px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1000;
+}
+
+.header-logo {
+    height: 70px; /* Điều chỉnh chiều cao logo */
+    width: auto;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
 
 /* Body content: 2 columns (left for images, right for video and article) */
 .body-content {
