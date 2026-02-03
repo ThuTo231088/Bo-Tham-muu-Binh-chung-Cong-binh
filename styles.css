@@ -11,7 +11,7 @@ body {
 
 /* Header */
 header {
-    background-color: rgba(255, 255, 255, 0.8);  /* Màu nền nhẹ, bán trong suốt */
+    background-color: rgba(255, 255, 255, 0.9);  /* Màu nền nhẹ, bán trong suốt */
     padding: 40px 0;
     text-align: center;
     border-bottom: 6px solid #2980b9;
@@ -77,6 +77,49 @@ h2 {
     margin-bottom: 20px;
 }
 
+/* Styling for content cards (articles and videos) */
+.content-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.content-card img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.content-text {
+    flex: 1;
+}
+
+.content-text h3 {
+    margin: 0;
+    font-size: 22px;
+    color: #2980b9;
+}
+
+.content-text p {
+    font-size: 16px;
+    color: #555;
+}
+
+.content-text a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+.content-text a:hover {
+    text-decoration: underline;
+}
+
 /* Button styles */
 button {
     padding: 15px 30px;
@@ -104,41 +147,5 @@ footer {
     width: 100%;
 }
 
-/* Section for game */
-#games button {
-    background-color: #f39c12;  /* Màu vàng cam cho nút Mini Game */
-}
-
-#games button:hover {
-    background-color: #e67e22;
-}
-
-/* Styling for links */
-a {
-    color: #2980b9;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Styling for larger sections like contest */
-#contest {
-    background-color: #00C6B5;
-    color: white;
-}
-
-#contest a {
-    color: white;
-    font-size: 20px;
-    margin-top: 10px;
-    display: inline-block;
-}
-
-#contest a:hover {
-    text-decoration: underline;
-}
 
 
