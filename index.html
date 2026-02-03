@@ -5,78 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bộ Tham mưu Binh chủng Công binh</title>
     <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-<!-- Header -->
-<!-- Header -->
-<div class="header">
-    <div class="header-content">
-        <img src="logo1.png" alt="Logo" class="header-logo" />
-        <div class="header-text">
-            <span>BINH CHỦNG CÔNG BINH</span>
-            <span>BỘ THAM MƯU</span>
+
+    <header class="header">
+        <div class="header-overlay"></div>
+        <div class="header-content">
+            <img src="logo1.png" alt="Logo Binh Chủng" class="header-logo" />
+            <div class="header-text">
+                <span class="text-upper">Binh Chủng Công Binh</span>
+                <span class="text-lower">Bộ Tham Mưu</span>
+            </div>
         </div>
-    </div>
-</div>
+    </header>
 
-    <div class="container">
-         
-<div class="container">
-    <div class="buttons-container">
-        <a href="#section1">
-            <button class="button">Bài dự thi tìm hiểu 80 năm ngày thành lập Binh chủng Công binh (25/3/1946 - 25/3/2026)</button>
+    <div class="cta-container">
+        <a href="#bai-du-thi" class="cta-card card-red">
+            <div class="cta-icon">📝</div>
+            <div class="cta-text">
+                <h3>Bài dự thi 80 năm</h3>
+                <p>Tìm hiểu truyền thống (1946 - 2026)</p>
+            </div>
         </a>
-        <a href="#section2">
-            <button class="button">Các trò chơi tìm hiểu kiến thức</button>
+
+        <a href="#tro-choi" class="cta-card card-gold">
+            <div class="cta-icon">🎮</div>
+            <div class="cta-text">
+                <h3>Trò chơi kiến thức</h3>
+                <p>Thử tài hiểu biết - Nhận quà ngay</p>
+            </div>
         </a>
     </div>
-</div>
 
+    <main class="container">
+        
+        <section class="intro-section">
+            <h1 class="main-title">Kỷ niệm 80 năm Ngày truyền thống Binh chủng Công binh</h1>
+            <p class="sub-title">"Mở đường thắng lợi" - Ôn lại và tôn vinh những thành tựu hào hùng suốt 80 năm qua.</p>
+        </section>
 
-        <!-- Body Part 1 -->
-        <section id="section1">
-          
- <h2>Kỷ niệm 80 năm ngày truyền thống Binh chủng Công binh</h2>
-            <p>Đây là dịp để chúng ta ôn lại và tôn vinh những thành tựu đã đạt được trong suốt 80 năm qua của Binh chủng Công binh.</p>
-         <!-- Section 2: Di chuyển nút xuống body -->
-            <!-- Chia phần theo chiều ngang (slide ảnh bên trái, video và bài báo bên phải) -->
-            <div class="body-content">
-                <!-- Slide ảnh - Cột trái -->
-                <div class="left-column">
-                    <h3>Ảnh truyền thống Binh chủng Công binh</h3>
+        <section class="content-grid">
+            
+            <div class="left-column">
+                <div class="card-box">
+                    <h3 class="section-heading">📸 Ảnh truyền thống</h3>
                     <div class="image-slider">
-                        <img src="image1.jpg" alt="Image 1" class="slide-img" />
-                        <img src="image2.jpg" alt="Image 2" class="slide-img" />
-                        <img src="image3.png" alt="Image 3" class="slide-img" />
-                    </div>
-                    <!-- Thêm các nút điều khiển -->
-                    <div class="slider-controls">
+                        <img src="image1.jpg" alt="Ảnh hoạt động 1" class="slide-img active" />
+                        <img src="image2.jpg" alt="Ảnh hoạt động 2" class="slide-img" />
+                        <img src="image3.png" alt="Ảnh hoạt động 3" class="slide-img" />
+                        
                         <button class="prev" onclick="prevSlide()">&#10094;</button>
                         <button class="next" onclick="nextSlide()">&#10095;</button>
                     </div>
                 </div>
+            </div>
 
-                <!-- Video và Bài báo - Cột phải -->
-                <div class="right-column">
-                    <div class="media">
-                        <h3>Video truyền thống Binh chủng Công binh</h3>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/d5GKohspaok" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                    <div class="media">
-                        <h3>Bài báo về Binh chủng Công binh</h3>
-                        <p><a href="https://mod.gov.vn/home/intro?1dmy&current=true&urile=wcm%3Apath%3AMod/sa-mod-site/sa-qpvn/sa-qpvn-bqp-root/sa-qpvn-bqp-child-bc/sa-qpvn-bqp-child-bc-bccb/eb3e1bf0-a9c4-43ca-a3d3-a138dc0c457f" target="_blank">Đọc bài báo tại đây</a></p>
+            <div class="right-column">
+                <div class="card-box">
+                    <h3 class="section-heading">🎥 Video Tư liệu</h3>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/d5GKohspaok" title="Video Công Binh" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
+
+                <div class="card-box news-box">
+                    <h3 class="section-heading">📰 Tin tức nổi bật</h3>
+                    <p>Các bài viết chuyên sâu về lịch sử và thành tựu của Binh chủng.</p>
+                    <a href="https://mod.gov.vn/home/intro" target="_blank" class="btn-read-more">Đọc bài báo chi tiết &rarr;</a>
+                </div>
             </div>
+
         </section>
+    </main>
 
-       
-    </div>
-
-    <!-- Footer -->
     <footer>
-        <div class="container">
+        <div class="footer-content">
             <p>&copy; 2026 Bộ Tham mưu Binh chủng Công binh. Tất cả các quyền được bảo lưu.</p>
         </div>
     </footer>
