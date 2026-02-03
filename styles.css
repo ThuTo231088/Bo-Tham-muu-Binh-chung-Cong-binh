@@ -11,15 +11,15 @@ body {
 }
 
 
-/* Header */
 header {
     width: 100%;
     background-image: url('anhnen1.png');
-    background-size: cover;
+    background-size: contain; /* Hiển thị toàn bộ ảnh */
     background-position: center;
     background-repeat: no-repeat;
+    background-color: #f0f0f0; /* Màu nền cho phần trống */
     position: relative;
-    height: 120px; /* THÊM DÒNG NÀY - chiều cao mặc định */
+    height: 120px;
 }
 
 /* Desktop */
