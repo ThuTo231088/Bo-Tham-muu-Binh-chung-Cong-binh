@@ -1,4 +1,4 @@
-/* --- CẤU HÌNH CHUNG --- */
+/* --- 1. CẤU HÌNH CHUNG & RESET --- */
 :root {
     --primary-red: #DA251D;
     --primary-gold: #D4AF37;
@@ -11,30 +11,31 @@ body {
     font-family: 'Roboto', sans-serif;
     color: var(--text-dark);
     line-height: 1.6;
-    margin: 0; padding: 0;
+    margin: 0; 
+    padding: 0;
     
-    /* THIẾT LẬP NỀN TRỐNG ĐỒNG */
-    background-color: #fdfbf7; /* Màu nền dự phòng (vàng kem nhẹ) */
-    background-image: url('background-trongdong.jpg'); /* Thay tên file ảnh bạn chọn vào đây */
-    background-repeat: repeat; /* Lặp lại hoa văn */
-    background-size: 500px; /* Chỉnh kích thước hoa văn vừa phải */
-    background-attachment: fixed; /* Giữ nguyên nền khi cuộn chuột */
-    /* Làm mờ hình nền đi để chữ nổi bật hơn (nếu ảnh quá đậm) */
-    background-blend-mode: soft-light; 
+    /* --- CẤU HÌNH NỀN TRỐNG ĐỒNG --- */
+    background-color: #fdfbf7; /* Màu nền vàng kem nhẹ dự phòng */
+    /* CHÚ Ý: Bạn nhớ đổi tên file ảnh bên dưới cho đúng file bạn tải về */
+    background-image: url('background-trongdong.jpg'); 
+    background-repeat: repeat;
+    background-size: 500px; /* Kích thước hoa văn */
+    background-attachment: fixed; /* Cố định nền khi cuộn */
+    background-blend-mode: multiply; /* Hòa trộn để nền không bị quá chói */
 }
 
-/* --- HEADER --- */
+/* --- 2. HEADER (PHẦN ĐẦU TRANG) --- */
 .header {
     position: relative;
     background-image: url('nen 2.jpg');
     background-size: cover;
-    background-position: center bottom; /* Căn đáy ảnh để lấy chi tiết đẹp */
-    height: 320px; /* Tăng chiều cao thêm chút */
+    background-position: center bottom;
+    height: 320px; /* Chiều cao chuẩn để hiển thị đẹp */
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    /* Thêm viền vàng dưới chân header */
+    /* Viền vàng sang trọng ngăn cách header và thân trang */
     border-bottom: 5px solid #D4AF37; 
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
@@ -42,36 +43,66 @@ body {
 .header-overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    /* Gradient xanh nhưng sáng hơn một chút ở giữa để làm nổi bật Logo */
+    /* Gradient xanh làm nổi bật logo ở giữa */
     background: radial-gradient(circle, rgba(0,51,102,0.4) 0%, rgba(0,51,102,0.9) 100%);
     z-index: 1;
 }
 
+.header-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+/* Hiệu ứng Logo phát sáng */
+.header-logo {
+    height: 110px;
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+    from { filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5)); }
+    to { filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.9)); }
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Merriweather', serif;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
 .text-upper {
-    font-size: 34px; /* Tăng kích thước */
+    font-size: 34px; /* Chữ to, rõ ràng */
     font-weight: 900;
-    color: #FFD700; /* Vàng kim loại */
+    color: #FFD700;
+    text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: 2px 2px 0px #DA251D, 4px 4px 10px black; /* Đổ bóng đỏ tạo khối 3D */
+    text-shadow: 3px 3px 0px #DA251D, 4px 4px 10px black; /* Hiệu ứng chữ 3D */
     margin-bottom: 5px;
 }
 
 .text-lower {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 700;
+    color: white;
     text-transform: uppercase;
-    letter-spacing: 5px; /* Giãn chữ rộng ra cho sang */
-    border-top: 2px solid rgba(255,255,255,0.5); /* Kẻ ngang phân cách */
+    letter-spacing: 4px;
+    border-top: 2px solid rgba(255,255,255,0.5);
     padding-top: 5px;
     display: inline-block;
 }
 
-/* --- FLOATING CARDS (THẺ NỔI) --- */
+/* --- 3. THẺ NỔI (CTA CARDS) --- */
 .cta-container {
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-top: -50px; /* Kéo lên đè vào header */
+    margin-top: -50px;
     position: relative;
     z-index: 10;
     padding: 0 20px;
@@ -96,7 +127,10 @@ body {
     box-shadow: 0 15px 35px rgba(0,0,0,0.2);
 }
 
-/* Màu riêng cho từng thẻ */
+.cta-card:hover .cta-icon {
+    transform: rotateY(360deg); /* Xoay icon khi di chuột */
+}
+
 .card-red { border-left-color: var(--primary-red); }
 .card-red .cta-icon { background: #fee2e2; color: var(--primary-red); }
 .card-red h3 { color: var(--primary-red); }
@@ -114,66 +148,61 @@ body {
     justify-content: center;
     border-radius: 50%;
     flex-shrink: 0;
+    transition: transform 0.6s ease;
 }
 
 .cta-text h3 { margin: 0; font-size: 18px; font-weight: bold; }
 .cta-text p { margin: 5px 0 0; font-size: 13px; color: #666; }
 
-/* --- MAIN BODY --- */
+/* --- 4. PHẦN THÂN (MAIN BODY) & SLOGAN --- */
 .container {
     max-width: 1200px;
-    margin: 60px auto 40px; /* Cách top 60px để không dính vào thẻ nổi */
+    margin: 70px auto 40px;
     padding: 0 20px;
 }
 
 .intro-section {
     text-align: center;
     margin-bottom: 50px;
-    position: relative;
-    padding: 0 20px;
 }
 
 .main-title {
     font-family: 'Merriweather', serif;
     color: var(--primary-navy);
-    font-size: 32px; /* To hơn */
+    font-size: 30px;
     font-weight: 900;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 2px white; /* Viền trắng nhẹ để tách khỏi nền trống đồng */
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 0px white; /* Viền trắng để tách khỏi nền trống đồng */
 }
 
-/* ĐÂY LÀ PHẦN SỬA CHO SLOGAN NỔI BẬT */
+/* === SLOGAN NỔI BẬT === */
 .sub-title {
     color: #DA251D; /* Đỏ cờ */
-    font-size: 20px;
-    font-weight: 800; /* Rất đậm */
-    text-transform: uppercase; /* Viết hoa toàn bộ */
-    background: white; /* Nền trắng */
+    font-size: 19px;
+    font-weight: 800;
+    text-transform: uppercase;
+    background: #ffffff;
     display: inline-block;
-    padding: 15px 30px;
-    border-radius: 50px; /* Bo tròn */
-    box-shadow: 0 4px 15px rgba(218, 37, 29, 0.2); /* Bóng mờ màu đỏ */
-    border: 2px solid #D4AF37; /* Viền vàng */
+    padding: 15px 40px;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(218, 37, 29, 0.15);
+    border: 2px solid #D4AF37;
     position: relative;
     letter-spacing: 1px;
 }
 
-/* Thêm dấu ngoặc kép trang trí 2 bên (nếu muốn cầu kỳ) */
-.sub-title::before {
+.sub-title::before, .sub-title::after {
     content: "★";
     color: #D4AF37;
-    margin-right: 10px;
-}
-.sub-title::after {
-    content: "★";
-    color: #D4AF37;
-    margin-left: 10px;
+    margin: 0 10px;
+    font-size: 1.2em;
+    vertical-align: middle;
 }
 
-/* --- GRID SYSTEM --- */
+/* --- 5. GRID & CONTENT --- */
 .content-grid {
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr; /* Cột trái to hơn cột phải một chút */
+    grid-template-columns: 1.3fr 0.7fr; /* Cột trái to hơn */
     gap: 30px;
 }
 
@@ -183,20 +212,24 @@ body {
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     margin-bottom: 30px;
+    border-top: 4px solid var(--primary-navy); /* Điểm nhấn màu xanh trên đầu mỗi box */
 }
 
 .section-heading {
     margin-top: 0;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
     color: var(--primary-navy);
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
-/* Slider Styles */
+/* Slider */
 .image-slider {
     position: relative;
     width: 100%;
-    height: 350px;
+    height: 400px; /* Tăng chiều cao ảnh */
     overflow: hidden;
     border-radius: 8px;
 }
@@ -206,14 +239,13 @@ body {
     height: 100%;
     object-fit: cover;
     display: none;
-    animation: fadeEffect 1s; /* Hiệu ứng mờ dần */
+    animation: fadeEffect 1s;
 }
 
 .slide-img.active { display: block; }
 
 @keyframes fadeEffect {
-    from {opacity: .4} 
-    to {opacity: 1}
+    from {opacity: .6} to {opacity: 1}
 }
 
 .prev, .next {
@@ -223,14 +255,15 @@ body {
     background: rgba(0,0,0,0.4);
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 15px;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
     border-radius: 50%;
-    margin: 0 10px;
+    margin: 0 15px;
+    transition: 0.3s;
 }
 .next { right: 0; }
-.prev:hover, .next:hover { background: rgba(0,0,0,0.8); }
+.prev:hover, .next:hover { background: var(--primary-red); }
 
 /* Video & News */
 .video-wrapper iframe {
@@ -239,97 +272,49 @@ body {
     border-radius: 8px;
 }
 
+.news-box p { font-size: 14px; color: #555; }
+
 .btn-read-more {
     display: inline-block;
     background-color: var(--primary-navy);
     color: white;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 4px;
     text-decoration: none;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 13px;
     margin-top: 10px;
     transition: background 0.3s;
 }
-.btn-read-more:hover { background-color: #002244; }
+.btn-read-more:hover { background-color: var(--primary-red); }
 
-/* --- FOOTER --- */
+/* --- 6. FOOTER --- */
 footer {
     background-color: var(--primary-navy);
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 30px 20px;
     margin-top: 50px;
+    border-top: 5px solid #D4AF37;
 }
 
-/* --- RESPONSIVE MOBILE --- */
+/* --- 7. RESPONSIVE (MOBILE) --- */
 @media (max-width: 768px) {
-    .header-text .text-upper { font-size: 20px; }
-    .header-text .text-lower { font-size: 18px; }
-    .header { height: 220px; }
+    .header { height: 260px; }
+    .header-text .text-upper { font-size: 22px; }
+    .header-text .text-lower { font-size: 16px; }
     
     .cta-container {
-        flex-direction: column; /* Xếp dọc các thẻ trên mobile */
-        margin-top: 20px; /* Không đè lên header nữa */
+        flex-direction: column;
+        margin-top: 20px;
     }
     .cta-card { width: 100%; box-sizing: border-box; }
     
-    .content-grid {
-        grid-template-columns: 1fr; /* 1 cột duy nhất */
-    }
-    
+    .content-grid { grid-template-columns: 1fr; }
     .image-slider { height: 250px; }
-}
-/* 1. Hiệu ứng Logo phát sáng */
-.header-logo {
-    height: 110px;
-    /* Tạo vầng sáng vàng nhẹ xung quanh logo */
-    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));
-    animation: glow 3s infinite alternate;
-    z-index: 2;
-}
-
-@keyframes glow {
-    from { filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5)); }
-    to { filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.9)); }
-}
-
-/* 2. Thêm nền ngầm cho Body */
-body {
-    background-color: #f4f7f6;
-    /* Dùng một pattern chìm hoặc ảnh trống đồng mờ */
-    background-image: url('https://www.transparenttextures.com/patterns/gray-floral.png'); /* Hoặc thay bằng ảnh họa tiết quân đội của bạn */
-    background-attachment: fixed;
-}
-
-/* 3. Tinh chỉnh Header chuyên nghiệp hơn */
-.header {
-    background: url('nen 2.jpg') center/cover no-repeat;
-    height: 300px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Lớp phủ gradient để phần dưới header hòa quyện vào body */
-.header::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: linear-gradient(to top, #f4f7f6, transparent);
-    z-index: 1;
-}
-
-/* 4. Nâng cấp các Card nút bấm cho 'trí tuệ' hơn */
-.cta-icon {
-    font-size: 35px;
-    transition: transform 0.5s ease;
-}
-
-.cta-card:hover .cta-icon {
-    transform: rotateY(360deg); /* Xoay tròn icon khi di chuột vào */
+    
+    .sub-title {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
 }
