@@ -23,3 +23,4 @@ function prevSlide() {
 // Initialize the slider
 showSlide(currentIndex);
 
+
