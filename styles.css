@@ -225,7 +225,7 @@ body {
     text-overflow: ellipsis; /* Thêm "..." nếu text quá dài */
     
     /* QUAN TRỌNG: Tất cả nút có cùng độ dài */
-    width: 500px; /* Đặt độ rộng cố định cho cả 2 nút */
+    width: 1200px; /* Đặt độ rộng cố định cho cả 2 nút */
     
     /* Căn giữa nội dung */
     display: flex;
