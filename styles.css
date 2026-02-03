@@ -197,30 +197,47 @@ body {
 /* Container chứa nút */
 .buttons-container {
     display: flex;
-    justify-content: center; /* Căn giữa các nút */
-    gap: 30px; /* Khoảng cách giữa các nút */
-    margin-top: 30px; /* Khoảng cách từ văn bản lên đến nút */
+    flex-direction: column; /* 2 nút nằm 2 dòng */
+    align-items: center; /* Căn giữa các nút */
+    gap: 20px; /* Khoảng cách giữa các nút */
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
-/* Nút bấm */
+/* Nút bấm - GIỮ NGUYÊN MÀU NHƯ MẪU */
 .buttons-container .button {
     background-color: #f39c12;  /* Màu vàng sáng cho nút */
     color: white;
-    padding: 20px 40px;
+    padding: 18px 40px; /* Điều chỉnh padding cho đẹp */
     font-size: 18px;
     font-weight: bold;
-    border-radius: 12px; /* Bo tròn các góc */
+    border-radius: 12px;
     border: none;
     cursor: pointer;
     text-align: center;
     text-transform: uppercase;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng nhẹ */
-    transition: all 0.3s ease; /* Hiệu ứng chuyển động */
-    max-width: 350px;  /* Giới hạn chiều rộng để nút không bị quá dài */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    
+    /* QUAN TRỌNG: Text chỉ 1 dòng */
+    white-space: nowrap;
+    
+    /* QUAN TRỌNG: Tất cả nút có cùng độ dài */
     width: 100%;
+    max-width: 400px; /* Đặt max-width chung */
+    min-width: 300px; /* Đặt min-width để các nút bằng nhau */
+    
+    /* Căn giữa nội dung */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Đảm bảo chiều cao cố định */
+    min-height: 60px;
+    box-sizing: border-box;
 }
 
-/* Hiệu ứng khi hover vào nút */
+/* Hiệu ứng khi hover vào nút - GIỮ NGUYÊN NHƯ MẪU */
 .buttons-container .button:hover {
     background-color: #e67e22; /* Màu cam đậm khi hover */
     transform: scale(1.05); /* Tăng kích thước nút khi hover */
@@ -233,15 +250,25 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Giảm bóng khi click */
 }
 
-/* Responsive: Đảm bảo nút đẹp trên thiết bị di động */
+/* Responsive */
 @media (max-width: 768px) {
     .buttons-container {
-        flex-direction: column; /* Chuyển các nút thành cột trên màn hình nhỏ */
-        gap: 20px; /* Giảm khoảng cách giữa các nút */
+        gap: 15px;
     }
-
+    
     .buttons-container .button {
-        max-width: 300px; /* Giảm chiều rộng tối đa cho nút trên di động */
+        max-width: 350px;
+        min-width: 250px;
+        padding: 16px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .buttons-container .button {
+        max-width: 300px;
+        min-width: 200px;
+        padding: 14px 25px;
+        font-size: 16px;
     }
 }
 
