@@ -59,7 +59,7 @@ nav ul li a:hover {
     background-color: #3498db;
 }
 
-/* Body content: 2 columns */
+/* Body content: 2 columns (left for images, right for video and article) */
 .body-content {
     display: flex;
     margin-top: 30px;
@@ -71,17 +71,21 @@ nav ul li a:hover {
     padding-right: 20px;
 }
 
-.left-column .image-slider {
+.image-slider {
     display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+    overflow: hidden;
+    position: relative;
 }
 
-.left-column img {
+.slide-img {
     width: 100%;
-    max-width: 250px;
+    max-width: 100%;
     height: auto;
-    border-radius: 10px;
+    display: none;
+}
+
+.slide-img.active {
+    display: block;
 }
 
 /* Right column (video and article) */
@@ -139,6 +143,7 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
 
 
 
