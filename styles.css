@@ -10,36 +10,172 @@ body {
     min-height: 100vh;
 }
 
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('nen 2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1000;
+    min-height: 120px;
+}
+
+/* Tạo lớp overlay nếu nền quá sáng/đậm ảnh hưởng đọc chữ */
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.25); /* Tăng độ mờ cho chữ nổi bật */
+    z-index: -1;
+}
+
+/* Container chứa logo + chữ */
 .header-content {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    display: flex;
     align-items: center;
     justify-content: center;
+    gap: 25px; /* Tăng khoảng cách giữa logo và chữ */
+    max-width: 1200px;
     width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    gap: 10px; /* Khoảng cách nhỏ */
 }
 
+/* Logo - chỉ còn logo bên phải */
 .header-logo {
-    height: 80px;
+    height: 100px; /* Tăng kích thước logo lên */
     width: auto;
+    z-index: 1;
+    margin: 0;
 }
 
-/* Logo bên trái */
-.header-logo:first-child {
-    justify-self: end;
-}
-
-
+/* Phần chữ - tăng kích thước đáng kể */
 .header-text {
-    grid-column: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     text-align: center;
-    padding: 0 15px;
+    font-weight: bold;
+    line-height: 1.1; /* Giảm line-height để chữ sát nhau hơn */
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Tăng đổ bóng mạnh hơn */
+    z-index: 1;
+}
+
+/* Dòng chữ thứ nhất - TĂNG LỚN */
+.header-text span:first-child {
+    color: #f5f5dc; /* Màu be nhạt */
+    font-size: 36px; /* Tăng từ 26px lên 36px */
+    font-weight: 900; /* Đậm hơn */
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+/* Dòng chữ thứ hai - TĂNG LỚN */
+.header-text span:last-child {
+    color: #ffd700; /* Màu vàng gold đậm */
+    font-size: 32px; /* Tăng từ 22px lên 32px */
+    font-weight: 800; /* Đậm hơn */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .header {
+        padding: 15px;
+        min-height: 100px;
+    }
+    
+    .header-logo {
+        height: 80px;
+    }
+    
+    .header-content {
+        gap: 20px;
+    }
+    
+    .header-text span:first-child {
+        font-size: 30px;
+    }
+    
+    .header-text span:last-child {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 12px;
+        min-height: 90px;
+    }
+    
+    .header-logo {
+        height: 70px;
+    }
+    
+    .header-content {
+        gap: 15px;
+    }
+    
+    .header-text span:first-child {
+        font-size: 26px;
+    }
+    
+    .header-text span:last-child {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header {
+        padding: 10px;
+        min-height: 80px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    .header-logo {
+        height: 60px;
+        order: 2; /* Đưa logo xuống dưới */
+    }
+    
+    .header-text {
+        order: 1; /* Đưa chữ lên trên */
+        width: 100%;
+    }
+    
+    .header-text span:first-child {
+        font-size: 22px;
+    }
+    
+    .header-text span:last-child {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 400px) {
+    .header-text span:first-child {
+        font-size: 20px;
+    }
+    
+    .header-text span:last-child {
+        font-size: 16px;
+    }
 }
 
 /* Body content: 2 columns (left for images, right for video and article) */
