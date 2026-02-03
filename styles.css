@@ -15,18 +15,43 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #004d00; /* Màu xanh lá đậm phù hợp với quân đội */
-    color: white;
-    padding: 15px 30px;
+    background-image: url('nen 2.jpg'); /* Nền từ ảnh bạn cung cấp */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 15px 20px; /* Giảm padding để logo sát chữ hơn */
     width: 100%;
     box-sizing: border-box;
     position: relative;
     z-index: 1000;
+    min-height: 100px; /* Đảm bảo chiều cao tối thiểu */
+}
+
+/* Tạo lớp overlay nếu nền quá sáng/đậm ảnh hưởng đọc chữ */
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1); /* Lớp phủ nhẹ để chữ rõ hơn */
+    z-index: -1;
 }
 
 .header-logo {
-    height: 70px; /* Điều chỉnh chiều cao logo */
+    height: 70px;
     width: auto;
+    z-index: 1; /* Đảm bảo logo nằm trên lớp overlay */
+}
+
+/* Điều chỉnh để logo sát chữ hơn */
+.header .header-logo:first-child {
+    margin-right: 10px; /* Khoảng cách logo trái với chữ */
+}
+
+.header .header-logo:last-child {
+    margin-left: 10px; /* Khoảng cách logo phải với chữ */
 }
 
 .header-text {
@@ -35,9 +60,84 @@ body {
     align-items: center;
     text-align: center;
     font-weight: bold;
-    font-size: 18px;
-    line-height: 1.4;
+    font-size: 22px; /* Tăng kích thước chữ */
+    line-height: 1.3;
     text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffffff; /* Màu chữ trắng, sẽ thay đổi sau */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Đổ bóng chữ cho dễ đọc */
+    z-index: 1; /* Đảm bảo chữ nằm trên lớp overlay */
+    flex-grow: 1; /* Cho phép phần chữ chiếm không gian còn lại */
+    margin: 0 15px; /* Khoảng cách giữa chữ và logo */
+}
+
+/* Màu chữ cụ thể dựa trên ảnh "chu 1.png" */
+.header-text span:first-child {
+    color: #f0e68c; /* Màu vàng nhạt (khaki) thường thấy trong quân đội */
+    font-size: 24px;
+}
+
+.header-text span:last-child {
+    color: #ffd700; /* Màu vàng gold */
+    font-size: 28px; /* Lớn hơn một chút */
+    margin-top: 5px;
+}
+
+/* Đảm bảo body không có margin mặc định */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Container styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        padding: 10px 15px;
+        min-height: 80px;
+    }
+    
+    .header-logo {
+        height: 50px;
+    }
+    
+    .header-text {
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+    
+    .header-text span:first-child {
+        font-size: 18px;
+    }
+    
+    .header-text span:last-child {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .header-text {
+        order: 2;
+        margin: 10px 0;
+    }
+    
+    .header-logo {
+        height: 40px;
+        margin: 5px 0;
+    }
 }
 
 /* Body content: 2 columns (left for images, right for video and article) */
