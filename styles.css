@@ -201,21 +201,35 @@ body {
     margin-top: 30px; /* Khoảng cách từ văn bản lên đến nút */
 }
 
+/* Container chứa nút */
+.buttons-container {
+    display: flex;
+    flex-direction: column; /* Các nút xếp thành cột (mỗi nút trên 1 dòng) */
+    align-items: center; /* Căn giữa các nút */
+    gap: 20px; /* Khoảng cách giữa các nút */
+    margin-top: 30px; /* Khoảng cách từ văn bản lên đến nút */
+}
+
 /* Nút bấm */
 .buttons-container .button {
     background-color: #f39c12;  /* Màu vàng sáng cho nút */
     color: white;
-    padding: 20px 40px;
+    padding: 20px 40px; /* Tăng padding để nút có chiều cao phù hợp */
     font-size: 18px;
     font-weight: bold;
     border-radius: 12px; /* Bo tròn các góc */
     border: none;
     cursor: pointer;
     text-align: center;
+    text-transform: uppercase;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng nhẹ */
     transition: all 0.3s ease; /* Hiệu ứng chuyển động */
-    max-width: 350px;  /* Giới hạn chiều rộng để nút không bị quá dài */
-    width: 100%;
+    width: 100%; /* Nút chiếm toàn bộ chiều rộng của container */
+    max-width: 600px;  /* Giới hạn chiều rộng tối đa của nút */
+    white-space: nowrap;  /* Đảm bảo chữ trong nút luôn nằm trên một dòng */
+    overflow: hidden;  /* Ẩn phần chữ nếu quá dài */
+    text-overflow: ellipsis; /* Thêm dấu ba chấm nếu chữ vượt quá chiều rộng nút */
+    box-sizing: border-box; /* Đảm bảo padding không làm thay đổi kích thước */
 }
 
 /* Hiệu ứng khi hover vào nút */
@@ -233,13 +247,8 @@ body {
 
 /* Responsive: Đảm bảo nút đẹp trên thiết bị di động */
 @media (max-width: 768px) {
-    .buttons-container {
-        flex-direction: column; /* Chuyển các nút thành cột trên màn hình nhỏ */
-        gap: 20px; /* Giảm khoảng cách giữa các nút */
-    }
-
     .buttons-container .button {
-        max-width: 300px; /* Giảm chiều rộng tối đa cho nút trên di động */
+        max-width: 90%; /* Giảm chiều rộng tối đa cho nút trên di động */
     }
 }
 
