@@ -221,11 +221,10 @@ body {
     border: none;
     cursor: pointer;
     text-align: center;
-    text-transform: uppercase;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng nhẹ */
     transition: all 0.3s ease; /* Hiệu ứng chuyển động */
     width: 100%; /* Nút chiếm toàn bộ chiều rộng của container */
-    max-width: 600px;  /* Giới hạn chiều rộng tối đa của nút */
+    max-width: 1200px;  /* Giới hạn chiều rộng tối đa của nút */
     white-space: nowrap;  /* Đảm bảo chữ trong nút luôn nằm trên một dòng */
     overflow: hidden;  /* Ẩn phần chữ nếu quá dài */
     text-overflow: ellipsis; /* Thêm dấu ba chấm nếu chữ vượt quá chiều rộng nút */
