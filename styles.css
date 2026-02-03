@@ -26,57 +26,44 @@ body {
 /* --- HEADER --- */
 .header {
     position: relative;
-    background-image: url('nen 2.jpg'); /* Đảm bảo file ảnh nền đúng tên */
+    background-image: url('nen 2.jpg');
     background-size: cover;
-    background-position: center;
-    height: 280px; /* Header cao hơn để tạo độ hoành tráng */
+    background-position: center bottom; /* Căn đáy ảnh để lấy chi tiết đẹp */
+    height: 320px; /* Tăng chiều cao thêm chút */
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
+    /* Thêm viền vàng dưới chân header */
+    border-bottom: 5px solid #D4AF37; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-/* Lớp phủ tối màu để chữ nổi bật hơn */
 .header-overlay {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(to bottom, rgba(0,51,102,0.8), rgba(0,51,102,0.5));
+    /* Gradient xanh nhưng sáng hơn một chút ở giữa để làm nổi bật Logo */
+    background: radial-gradient(circle, rgba(0,51,102,0.4) 0%, rgba(0,51,102,0.9) 100%);
     z-index: 1;
 }
 
-.header-content {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    text-align: center;
-}
-
-.header-logo {
-    height: 110px;
-    filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
-}
-
-.header-text {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Merriweather', serif; /* Font chữ có chân sang trọng */
-    text-transform: uppercase;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
 .text-upper {
-    font-size: 28px;
+    font-size: 34px; /* Tăng kích thước */
     font-weight: 900;
-    color: #FFD700; /* Vàng tươi */
-    letter-spacing: 1px;
+    color: #FFD700; /* Vàng kim loại */
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px #DA251D, 4px 4px 10px black; /* Đổ bóng đỏ tạo khối 3D */
+    margin-bottom: 5px;
 }
 
 .text-lower {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 700;
-    color: white;
+    text-transform: uppercase;
+    letter-spacing: 5px; /* Giãn chữ rộng ra cho sang */
+    border-top: 2px solid rgba(255,255,255,0.5); /* Kẻ ngang phân cách */
+    padding-top: 5px;
+    display: inline-block;
 }
 
 /* --- FLOATING CARDS (THẺ NỔI) --- */
@@ -141,19 +128,46 @@ body {
 
 .intro-section {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    position: relative;
+    padding: 0 20px;
 }
 
 .main-title {
     font-family: 'Merriweather', serif;
     color: var(--primary-navy);
-    font-size: 28px;
-    margin-bottom: 10px;
+    font-size: 32px; /* To hơn */
+    font-weight: 900;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px white; /* Viền trắng nhẹ để tách khỏi nền trống đồng */
 }
 
+/* ĐÂY LÀ PHẦN SỬA CHO SLOGAN NỔI BẬT */
 .sub-title {
-    color: #666;
-    font-style: italic;
+    color: #DA251D; /* Đỏ cờ */
+    font-size: 20px;
+    font-weight: 800; /* Rất đậm */
+    text-transform: uppercase; /* Viết hoa toàn bộ */
+    background: white; /* Nền trắng */
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 50px; /* Bo tròn */
+    box-shadow: 0 4px 15px rgba(218, 37, 29, 0.2); /* Bóng mờ màu đỏ */
+    border: 2px solid #D4AF37; /* Viền vàng */
+    position: relative;
+    letter-spacing: 1px;
+}
+
+/* Thêm dấu ngoặc kép trang trí 2 bên (nếu muốn cầu kỳ) */
+.sub-title::before {
+    content: "★";
+    color: #D4AF37;
+    margin-right: 10px;
+}
+.sub-title::after {
+    content: "★";
+    color: #D4AF37;
+    margin-left: 10px;
 }
 
 /* --- GRID SYSTEM --- */
