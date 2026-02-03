@@ -35,7 +35,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.25); /* Tăng độ mờ cho chữ nổi bật */
+    background-color: rgba(0, 0, 0, 0.25);
     z-index: -1;
 }
 
@@ -44,14 +44,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 25px; /* Tăng khoảng cách giữa logo và chữ */
+    gap: 25px; /* Khoảng cách giữa logo và chữ */
     max-width: 1200px;
     width: 100%;
 }
 
-/* Logo - chỉ còn logo bên phải */
+/* Logo - chỉ giữ logo bên trái */
 .header-logo {
-    height: 100px; /* Tăng kích thước logo lên */
+    height: 100px; /* Tăng kích thước logo */
     width: auto;
     z-index: 1;
     margin: 0;
@@ -64,10 +64,10 @@ body {
     align-items: center;
     text-align: center;
     font-weight: bold;
-    line-height: 1.1; /* Giảm line-height để chữ sát nhau hơn */
+    line-height: 1.1;
     text-transform: uppercase;
     color: #ffffff;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Tăng đổ bóng mạnh hơn */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
     z-index: 1;
 }
 
@@ -151,11 +151,11 @@ body {
     
     .header-logo {
         height: 60px;
-        order: 2; /* Đưa logo xuống dưới */
+        order: 1; /* Logo lên trên */
     }
     
     .header-text {
-        order: 1; /* Đưa chữ lên trên */
+        order: 2; /* Chữ xuống dưới */
         width: 100%;
     }
     
@@ -167,17 +167,6 @@ body {
         font-size: 18px;
     }
 }
-
-@media (max-width: 400px) {
-    .header-text span:first-child {
-        font-size: 20px;
-    }
-    
-    .header-text span:last-child {
-        font-size: 16px;
-    }
-}
-
 /* Body content: 2 columns (left for images, right for video and article) */
 .body-content {
     display: flex;
