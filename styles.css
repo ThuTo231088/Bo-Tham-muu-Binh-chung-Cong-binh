@@ -212,7 +212,6 @@ body {
     border: none;
     cursor: pointer;
     text-align: center;
-    text-transform: none;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng nhẹ */
     transition: all 0.3s ease; /* Hiệu ứng chuyển động */
     max-width: 350px;  /* Giới hạn chiều rộng để nút không bị quá dài */
