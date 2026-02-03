@@ -143,6 +143,83 @@ footer {
     bottom: 0;
     width: 100%;
 }
+/* Styling for the left column and the image slider */
+.left-column {
+    width: 50%;
+    padding-right: 20px;
+}
+
+.image-slider {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: none;
+}
+
+.slide-img.active {
+    display: block;
+}
+
+/* Slider controls (prev/next buttons) */
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.slider-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.slider-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Right column (video and article) */
+.right-column {
+    width: 50%;
+    padding-left: 20px;
+}
+
+.right-column iframe {
+    width: 100%;
+    height: 315px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.right-column h3 {
+    font-size: 24px;
+    color: #2980b9;
+    margin-bottom: 10px;
+}
+
+.right-column a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.right-column a:hover {
+    text-decoration: underline;
+}
+
 
 
 
