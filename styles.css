@@ -10,37 +10,29 @@ body {
     min-height: 100vh;
 }
 
-
 header {
     width: 100%;
-    background-image: url('anhnen1.png');
-    background-size: contain; /* Hiển thị toàn bộ ảnh */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #f0f0f0; /* Màu nền cho phần trống */
-    position: relative;
     height: 120px;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Desktop */
-@media (min-width: 769px) {
-    header {
-        height: 150px; /* Ghi đè lên giá trị mặc định */
-    }
+.header-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hoặc: contain, fill, none */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-    header {
-        height: 100px; /* Ghi đè lên giá trị mặc định */
-    }
-}
 .navbar-header {
-    padding: 10px 20px; /* Giảm padding để tiết kiệm không gian */
-}
-
-.navbar-brand {
-    height: 40px; /* Giảm kích thước logo nếu cần */
+    position: relative;
+    z-index: 2;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
 }
 /* Body content: 2 columns (left for images, right for video and article) */
 .body-content {
