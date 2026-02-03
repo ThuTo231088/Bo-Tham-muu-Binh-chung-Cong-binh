@@ -1,29 +1,39 @@
-let currentIndex = 0;
-const images = document.querySelectorAll('.image-slider img');
+document.addEventListener('DOMContentLoaded', function() {
+    
+    let currentIndex = 0;
+    const images = document.querySelectorAll('.slide-img');
+    const totalImages = images.length;
 
-function showSlide(index) {
-    images.forEach((img, i) => {
-        img.classList.remove('active');
-        if (i === index) {
-            img.classList.add('active');
+    // Hàm hiển thị slide
+    function showSlide(index) {
+        // Ẩn tất cả ảnh
+        images.forEach((img) => {
+            img.classList.remove('active');
+        });
+        
+        // Hiện ảnh hiện tại
+        if (images[index]) {
+            images[index].classList.add('active');
         }
-    });
-}
+    }
 
-function nextSlide() {
-    currentIndex = (currentIndex + 1) % images.length;
+    // Chuyển slide tiếp theo
+    window.nextSlide = function() {
+        currentIndex = (currentIndex + 1) % totalImages;
+        showSlide(currentIndex);
+    }
+
+    // Quay lại slide trước
+    window.prevSlide = function() {
+        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+        showSlide(currentIndex);
+    }
+
+    // Khởi tạo slide đầu tiên
     showSlide(currentIndex);
-}
 
-function prevSlide() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showSlide(currentIndex);
-}
-
-// Initialize the slider
-showSlide(currentIndex);
-
-
-
-
-
+    // Tự động chuyển ảnh sau mỗi 5 giây (Tuỳ chọn)
+    setInterval(() => {
+        nextSlide();
+    }, 5000);
+});
