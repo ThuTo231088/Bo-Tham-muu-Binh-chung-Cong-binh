@@ -192,13 +192,13 @@ footer {
 
 /* Responsive design for small screens (e.g. mobile) */
 @media (max-width: 768px) {
-    /* Stack the columns on top of each other */
+    /* Chỉ thay đổi giao diện trên thiết bị di động */
     .body-content {
         flex-direction: column; /* Chuyển các cột thành dọc */
         margin-top: 20px;
     }
 
-    /* Make images and iframe fit better */
+    /* Điều chỉnh cho cột trái và phải */
     .left-column, .right-column {
         width: 100%;
         padding-left: 0;
@@ -206,14 +206,14 @@ footer {
     }
 
     .image-slider {
-        height: 250px; /* Cắt giảm chiều cao ảnh cho phù hợp với di động */
+        height: 250px; /* Giảm chiều cao ảnh cho phù hợp với di động */
     }
 
     .right-column iframe {
         height: 200px; /* Giảm chiều cao iframe cho phù hợp */
     }
 
-    /* Reduce the font size for smaller screens */
+    /* Điều chỉnh font cho header và menu trên di động */
     header h1 {
         font-size: 24px;
     }
@@ -223,24 +223,25 @@ footer {
         padding: 12px 25px; /* Cải thiện khoảng cách trên thiết bị di động */
     }
 
+    /* Nút điều khiển slider */
     .slider-controls button {
         font-size: 24px;
         padding: 12px;
     }
 }
 
-/* Further responsive adjustments for very small screens */
+/* Responsive design for very small screens */
 @media (max-width: 480px) {
     header h1 {
         font-size: 20px;
     }
 
-    /* Adjust font size and layout for ultra small screens */
     .slider-controls button {
         font-size: 20px;
         padding: 10px;
     }
 }
+
 
 
 
