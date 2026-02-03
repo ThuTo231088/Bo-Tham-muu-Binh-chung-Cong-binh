@@ -82,7 +82,7 @@ body {
     
     /* Font chữ theo ảnh */
     font-family: "Times New Roman", "Times", serif;
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 700; /* Độ đậm vừa phải như ảnh */
     letter-spacing: 2.5px; /* Khoảng cách chữ rộng hơn */
     margin-bottom: 5px;
@@ -99,7 +99,7 @@ body {
     
     /* Font chữ theo ảnh */
     font-family: "Times New Roman", "Times", serif;
-    font-size: 32px; /* Nhỏ hơn dòng trên một chút */
+    font-size: 36px; /* Nhỏ hơn dòng trên một chút */
     font-weight: 700; /* Độ đậm vừa phải */
     letter-spacing: 2px;
     text-transform: uppercase;
