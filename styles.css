@@ -31,10 +31,6 @@ body {
     justify-self: end;
 }
 
-/* Logo bên phải */
-.header-logo:last-child {
-    justify-self: start;
-}
 
 .header-text {
     grid-column: 2;
