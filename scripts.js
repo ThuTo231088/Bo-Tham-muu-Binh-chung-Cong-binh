@@ -15,5 +15,11 @@ function nextSlide() {
     showSlide(currentIndex);
 }
 
-setInterval(nextSlide, 3000); // Chuyển ảnh mỗi 3 giây
+function prevSlide() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showSlide(currentIndex);
+}
+
+// Initialize the slider
 showSlide(currentIndex);
+
