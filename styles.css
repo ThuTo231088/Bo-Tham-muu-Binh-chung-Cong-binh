@@ -197,57 +197,57 @@ body {
 /* Container chứa nút */
 .buttons-container {
     display: flex;
-    flex-direction: column; /* 2 nút nằm 2 dòng */
+    flex-direction: column; /* 2 nút nằm 2 dòng (trên-dưới) */
     align-items: center; /* Căn giữa các nút */
-    gap: 20px; /* Khoảng cách giữa các nút */
+    gap: 20px; /* Khoảng cách giữa 2 dòng nút */
     margin-top: 30px;
     margin-bottom: 30px;
 }
 
-/* Nút bấm - GIỮ NGUYÊN MÀU NHƯ MẪU */
+/* Nút bấm */
 .buttons-container .button {
     background-color: #f39c12;  /* Màu vàng sáng cho nút */
     color: white;
-    padding: 18px 40px; /* Điều chỉnh padding cho đẹp */
+    padding: 18px 40px;
     font-size: 18px;
     font-weight: bold;
     border-radius: 12px;
     border: none;
     cursor: pointer;
     text-align: center;
-    text-transform: uppercase;
+    text-transform: none; /* Chữ thường */
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     
-    /* QUAN TRỌNG: Text chỉ 1 dòng */
+    /* QUAN TRỌNG: Text chỉ 1 dòng, không xuống dòng */
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Thêm "..." nếu text quá dài */
     
     /* QUAN TRỌNG: Tất cả nút có cùng độ dài */
-    width: 100%;
-    max-width: 400px; /* Đặt max-width chung */
-    min-width: 300px; /* Đặt min-width để các nút bằng nhau */
+    width: 500px; /* Đặt độ rộng cố định cho cả 2 nút */
     
     /* Căn giữa nội dung */
     display: flex;
     align-items: center;
     justify-content: center;
     
-    /* Đảm bảo chiều cao cố định */
-    min-height: 60px;
+    /* Chiều cao cố định */
+    height: 60px;
     box-sizing: border-box;
 }
 
-/* Hiệu ứng khi hover vào nút - GIỮ NGUYÊN NHƯ MẪU */
+/* Hiệu ứng khi hover vào nút */
 .buttons-container .button:hover {
-    background-color: #e67e22; /* Màu cam đậm khi hover */
-    transform: scale(1.05); /* Tăng kích thước nút khi hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Tăng bóng khi hover */
+    background-color: #e67e22;
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Hiệu ứng khi click vào nút */
 .buttons-container .button:active {
-    transform: scale(0.98); /* Giảm kích thước nút khi click */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Giảm bóng khi click */
+    transform: scale(0.98);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive */
@@ -257,18 +257,19 @@ body {
     }
     
     .buttons-container .button {
-        max-width: 350px;
-        min-width: 250px;
+        width: 400px; /* Giảm độ rộng trên tablet */
         padding: 16px 30px;
+        font-size: 16px;
+        height: 55px;
     }
 }
 
 @media (max-width: 480px) {
     .buttons-container .button {
-        max-width: 300px;
-        min-width: 200px;
-        padding: 14px 25px;
-        font-size: 16px;
+        width: 300px; /* Giảm độ rộng trên mobile */
+        padding: 14px 20px;
+        font-size: 15px;
+        height: 50px;
     }
 }
 
