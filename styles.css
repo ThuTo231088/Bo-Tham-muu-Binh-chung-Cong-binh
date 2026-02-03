@@ -259,3 +259,56 @@ footer {
     
     .image-slider { height: 250px; }
 }
+/* 1. Hiệu ứng Logo phát sáng */
+.header-logo {
+    height: 110px;
+    /* Tạo vầng sáng vàng nhẹ xung quanh logo */
+    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8));
+    animation: glow 3s infinite alternate;
+    z-index: 2;
+}
+
+@keyframes glow {
+    from { filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5)); }
+    to { filter: drop-shadow(0 0 25px rgba(212, 175, 55, 0.9)); }
+}
+
+/* 2. Thêm nền ngầm cho Body */
+body {
+    background-color: #f4f7f6;
+    /* Dùng một pattern chìm hoặc ảnh trống đồng mờ */
+    background-image: url('https://www.transparenttextures.com/patterns/gray-floral.png'); /* Hoặc thay bằng ảnh họa tiết quân đội của bạn */
+    background-attachment: fixed;
+}
+
+/* 3. Tinh chỉnh Header chuyên nghiệp hơn */
+.header {
+    background: url('nen 2.jpg') center/cover no-repeat;
+    height: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Lớp phủ gradient để phần dưới header hòa quyện vào body */
+.header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, #f4f7f6, transparent);
+    z-index: 1;
+}
+
+/* 4. Nâng cấp các Card nút bấm cho 'trí tuệ' hơn */
+.cta-icon {
+    font-size: 35px;
+    transition: transform 0.5s ease;
+}
+
+.cta-card:hover .cta-icon {
+    transform: rotateY(360deg); /* Xoay tròn icon khi di chuột vào */
+}
