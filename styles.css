@@ -13,18 +13,18 @@ body {
 /* Header styles */
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Căn giữa toàn bộ nội dung */
     align-items: center;
-    background-image: url('nen 2.jpg'); /* Nền từ ảnh bạn cung cấp */
+    background-image: url('nen 2.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    padding: 15px 20px; /* Giảm padding để logo sát chữ hơn */
+    padding: 15px 20px;
     width: 100%;
     box-sizing: border-box;
     position: relative;
     z-index: 1000;
-    min-height: 100px; /* Đảm bảo chiều cao tối thiểu */
+    min-height: 100px;
 }
 
 /* Tạo lớp overlay nếu nền quá sáng/đậm ảnh hưởng đọc chữ */
@@ -35,23 +35,26 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.1); /* Lớp phủ nhẹ để chữ rõ hơn */
+    background-color: rgba(0, 0, 0, 0.1);
     z-index: -1;
 }
 
 .header-logo {
     height: 70px;
     width: auto;
-    z-index: 1; /* Đảm bảo logo nằm trên lớp overlay */
+    z-index: 1;
+    /* Loại bỏ margin cũ */
+    margin: 0 !important;
 }
 
-/* Điều chỉnh để logo sát chữ hơn */
-.header .header-logo:first-child {
-    margin-right: 10px; /* Khoảng cách logo trái với chữ */
-}
-
-.header .header-logo:last-child {
-    margin-left: 10px; /* Khoảng cách logo phải với chữ */
+/* Container chứa logo + chữ để dễ căn chỉnh */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Khoảng cách giữa logo và chữ */
+    max-width: 1200px;
+    width: 100%;
 }
 
 .header-text {
@@ -60,41 +63,27 @@ body {
     align-items: center;
     text-align: center;
     font-weight: bold;
-    font-size: 22px; /* Tăng kích thước chữ */
+    font-size: 22px;
     line-height: 1.3;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #ffffff; /* Màu chữ trắng, sẽ thay đổi sau */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Đổ bóng chữ cho dễ đọc */
-    z-index: 1; /* Đảm bảo chữ nằm trên lớp overlay */
-    flex-grow: 1; /* Cho phép phần chữ chiếm không gian còn lại */
-    margin: 0 15px; /* Khoảng cách giữa chữ và logo */
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    /* Loại bỏ margin cũ */
+    margin: 0 !important;
 }
 
 /* Màu chữ cụ thể dựa trên ảnh "chu 1.png" */
 .header-text span:first-child {
-    color: #f0e68c; /* Màu vàng nhạt (khaki) thường thấy trong quân đội */
+    color: #f0e68c;
     font-size: 24px;
 }
 
 .header-text span:last-child {
-    color: #ffd700; /* Màu vàng gold */
-    font-size: 28px; /* Lớn hơn một chút */
+    color: #ffd700;
+    font-size: 28px;
     margin-top: 5px;
-}
-
-/* Đảm bảo body không có margin mặc định */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-}
-
-/* Container styles */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
 }
 
 /* Responsive */
@@ -106,6 +95,10 @@ body {
     
     .header-logo {
         height: 50px;
+    }
+    
+    .header-content {
+        gap: 10px;
     }
     
     .header-text {
@@ -129,14 +122,19 @@ body {
         padding: 10px;
     }
     
+    .header-content {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
     .header-text {
         order: 2;
-        margin: 10px 0;
+        margin: 5px 0 !important;
     }
     
     .header-logo {
         height: 40px;
-        margin: 5px 0;
+        margin: 5px 0 !important;
     }
 }
 
