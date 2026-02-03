@@ -10,6 +10,7 @@ body {
     min-height: 100vh;
 }
 
+
 /* Header */
 /* Header */
 header {
@@ -19,22 +20,22 @@ header {
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
+    height: 200px; /* THÊM DÒNG NÀY - chiều cao mặc định */
 }
 
 /* Desktop */
 @media (min-width: 769px) {
     header {
-        height: 250px;
+        height: 250px; /* Ghi đè lên giá trị mặc định */
     }
 }
 
 /* Mobile */
 @media (max-width: 768px) {
     header {
-        height: 180px;
+        height: 180px; /* Ghi đè lên giá trị mặc định */
     }
 }
-
 
 /* Body content: 2 columns (left for images, right for video and article) */
 .body-content {
