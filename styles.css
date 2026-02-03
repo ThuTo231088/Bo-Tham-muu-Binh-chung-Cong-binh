@@ -13,7 +13,7 @@ body {
 /* Header */
 header {
     width: 100%;
-     height: 200px;/* Chiếm toàn bộ chiều cao viewport */
+     height: 100px;/* Chiếm toàn bộ chiều cao viewport */
     background-image: url('anhnen1.png');
     background-size: cover; /* Ảnh bao phủ toàn bộ header */
     background-position: center; /* Căn giữa ảnh */
@@ -29,21 +29,6 @@ header {
     z-index: 2;
 }
 
-.navbar-brand {
-    /* Giữ logo như một phần tử riêng nếu cần */
-}
-
-/* Nếu muốn ảnh nền phủ toàn bộ header kể cả phần navbar */
-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Lớp phủ tối để chữ nổi bật (tuỳ chọn) */
-    z-index: 1;
-}
 
 /* Body content: 2 columns (left for images, right for video and article) */
 .body-content {
