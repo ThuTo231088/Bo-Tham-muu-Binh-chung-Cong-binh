@@ -57,7 +57,9 @@ body {
     margin: 0;
 }
 
-/* Phần chữ - tăng kích thước đáng kể */
+/* ========== CHỈNH SỬA PHẦN CHỮ THEO ẢNH "CHU 1.PNG" ========== */
+
+/* Phần chữ - điều chỉnh theo ảnh */
 .header-text {
     display: flex;
     flex-direction: column;
@@ -66,29 +68,47 @@ body {
     font-weight: bold;
     line-height: 1.1;
     text-transform: uppercase;
-    color: #ffffff;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
     z-index: 1;
+    
+    /* Font chữ từ ảnh */
+    font-family: "Times New Roman", "Times", serif;
+    letter-spacing: 2px; /* Khoảng cách chữ rộng như ảnh */
 }
 
-/* Dòng chữ thứ nhất - TĂNG LỚN */
+/* Dòng chữ thứ nhất: "BINH CHỦNG CÔNG BINH" - THEO ẢNH */
 .header-text span:first-child {
-    color: #f5f5dc; /* Màu be nhạt */
-    font-size: 36px; /* Tăng từ 26px lên 36px */
-    font-weight: 900; /* Đậm hơn */
-    letter-spacing: 1.5px;
-    margin-bottom: 8px;
+    /* Màu vàng nhạt/be nhạt từ ảnh */
+    color: #f5e8b0;
+    
+    /* Font chữ theo ảnh */
+    font-family: "Times New Roman", "Times", serif;
+    font-size: 36px;
+    font-weight: 700; /* Độ đậm vừa phải như ảnh */
+    letter-spacing: 2.5px; /* Khoảng cách chữ rộng hơn */
+    margin-bottom: 5px;
     text-transform: uppercase;
+    
+    /* Hiệu ứng bóng chữ nhẹ như ảnh */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* Dòng chữ thứ hai - TĂNG LỚN */
+/* Dòng chữ thứ hai: "BỘ THAM MƯU" - THEO ẢNH */
 .header-text span:last-child {
-    color: #ffd700; /* Màu vàng gold đậm */
-    font-size: 32px; /* Tăng từ 22px lên 32px */
-    font-weight: 800; /* Đậm hơn */
-    letter-spacing: 1px;
+    /* Màu vàng gold đậm từ ảnh */
+    color: #d4af37;
+    
+    /* Font chữ theo ảnh */
+    font-family: "Times New Roman", "Times", serif;
+    font-size: 32px; /* Nhỏ hơn dòng trên một chút */
+    font-weight: 700; /* Độ đậm vừa phải */
+    letter-spacing: 2px;
     text-transform: uppercase;
+    
+    /* Hiệu ứng bóng chữ nhẹ */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
+
+/* ========== HẾT CHỈNH SỬA THEO ẢNH ========== */
 
 /* Responsive */
 @media (max-width: 992px) {
@@ -106,11 +126,13 @@ body {
     }
     
     .header-text span:first-child {
-        font-size: 30px;
+        font-size: 32px;
+        letter-spacing: 2px;
     }
     
     .header-text span:last-child {
-        font-size: 26px;
+        font-size: 28px;
+        letter-spacing: 1.5px;
     }
 }
 
@@ -129,11 +151,13 @@ body {
     }
     
     .header-text span:first-child {
-        font-size: 26px;
+        font-size: 28px;
+        letter-spacing: 1.5px;
     }
     
     .header-text span:last-child {
-        font-size: 22px;
+        font-size: 24px;
+        letter-spacing: 1px;
     }
 }
 
@@ -160,13 +184,16 @@ body {
     }
     
     .header-text span:first-child {
-        font-size: 22px;
+        font-size: 24px;
+        letter-spacing: 1px;
     }
     
     .header-text span:last-child {
-        font-size: 18px;
+        font-size: 20px;
+        letter-spacing: 0.5px;
     }
 }
+
 /* Body content: 2 columns (left for images, right for video and article) */
 .body-content {
     display: flex;
@@ -289,15 +316,3 @@ footer {
     bottom: 0;
     display: block;
 }
-
-
-
-
-
-
-
-
-
-
-
-
