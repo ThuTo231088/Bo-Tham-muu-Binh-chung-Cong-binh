@@ -10,36 +10,7 @@ body {
     min-height: 100vh;
 }
 
-header {
-    width: 100%;
-    background-image: url('anhnen2.png');
-    background-size: 100% 100%; /* Kéo giãn vừa khít header */
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    height: 120px;
-}
 
-/* Desktop */
-@media (min-width: 769px) {
-    header {
-        height: 150px; /* Ghi đè lên giá trị mặc định */
-    }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    header {
-        height: 100px; /* Ghi đè lên giá trị mặc định */
-    }
-}
-.navbar-header {
-    padding: 10px 20px; /* Giảm padding để tiết kiệm không gian */
-}
-
-.navbar-brand {
-    height: 40px; /* Giảm kích thước logo nếu cần */
-}
 /* Body content: 2 columns (left for images, right for video and article) */
 .body-content {
     display: flex;
